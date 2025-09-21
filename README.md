@@ -56,9 +56,6 @@ Ich freue mich über **Feedback, Verbesserungsvorschläge** oder Ideen von euch,
 ---
 
 ## Screenshots
-
-Hier kannst du deine App visualisieren:
-
 ![Login Screen](./screenshots/Login.png)  
 ![Dashboard](./screenshots/Dashboard01.png)  
 ![Dashboard](./screenshots/Dashboard02.png)  
