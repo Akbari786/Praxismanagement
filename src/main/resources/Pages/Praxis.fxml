@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #F0EDCC; -fx-padding: 20;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Praxis_Controller">
+
+    <!-- Persönliche Daten + TableView + Urlaub Controls + ToDo → jetzt in CENTER -->
+    <center>
+        <VBox spacing="20">
+
+            <!-- 1. Persönliche Daten -->
+            <GridPane hgap="15" vgap="15">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                    <ColumnConstraints hgrow="NEVER" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+
+                <!-- Row 0 -->
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <TextField fx:id="nameField" prefHeight="28" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Email:" GridPane.columnIndex="2" GridPane.rowIndex="0">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <TextField fx:id="emailField" prefHeight="28" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                <!-- Row 1 -->
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Family:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <TextField fx:id="familyField" prefHeight="28" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Password:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <TextField fx:id="passwordField" prefHeight="28" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <!-- Row 2 -->
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Address:" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <TextField fx:id="addressField" prefHeight="28" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="City Code:" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <TextField fx:id="cityCodeField" prefHeight="28" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                <!-- Row 3 -->
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Staff Number:" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <TextField fx:id="personalNumberField" editable="false" prefHeight="28" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Phone Number:" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <TextField fx:id="phoneNumberField" prefHeight="28" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+                <!-- Row 4 -->
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Working Since:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <TextField fx:id="workingSinceField" editable="false" prefHeight="28" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Select Vacations:" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <TextField fx:id="monthYearField" editable="false" prefHeight="28" promptText="MM/yyyy" />
+                    <Button onAction="#showMonthYearPicker" text="..." />
+                </HBox>
+            <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="City:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Label>
+            <TextField fx:id="cityField" prefHeight="28" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="Change" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Consolas" size="14.0" />
+               </font></Button>
+            <Label style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Vacations Status:" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font>
+            </Label>
+
+                <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            </rowConstraints>
+            </GridPane>
+         <HBox spacing="10.0">
+            <children>
+      
+                        <!-- 2. TableView fuer Urlaub -->
+                <TableView fx:id="vacationTable">
+                <!-- Die Spalten werden dynamisch erzeugt -->
+                </TableView>
+                <!-- 2. TableView fuer beantragte Urlaub Status -->
+               <TableView fx:id="ReqVacationTable">
+                   <!-- Die Spalten werden dynamisch erzeugt -->
+               </TableView>
+
+            </children>
+         </HBox>
+
+            <Label prefHeight="14.0" prefWidth="116.0" style="-fx-font-family: 'Consolas'; -fx-font-weight: bold; -fx-font-size: 12px;" text="Vacation Request">
+            <font>
+               <Font name="Consolas" size="16.0" />
+            </font></Label>
+
+            <!-- 4. Urlaub Controls -->
+            <HBox spacing="15">
+                <ComboBox fx:id="vacationTypeComboBox" maxWidth="150.0" prefHeight="50.0" promptText="Vacation Type" HBox.hgrow="ALWAYS" />
+                <DatePicker fx:id="fromDatePicker" prefHeight="50.0" promptText="From" HBox.hgrow="ALWAYS" />
+                <DatePicker fx:id="toDatePicker" prefHeight="50.0" promptText="To" HBox.hgrow="ALWAYS" />
+            </HBox>
+             <Button maxWidth="150.0" onAction="#submitVacationBtn" prefHeight="50" text="Submit" />
+
+            <!-- 5. ToDo + Save -->
+            <VBox spacing="10">
+                <TextArea prefHeight="150" promptText="Make TODO" />
+                <Button maxWidth="150" prefHeight="50" text="Save" />
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
